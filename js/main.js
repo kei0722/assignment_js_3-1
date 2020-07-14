@@ -8,7 +8,7 @@ document.getElementById('add-btn').addEventListener('click', () => {
 	const statusButton = document.createElement('button');
 	const deleteButton = document.createElement('button');
 	const tbody = document.querySelector('tbody');
-	const addtr = tbody.appendChild(tr);
+	const addTr = tbody.appendChild(tr);
 
 	todoList.push({
 		id: todoList.length,
@@ -19,30 +19,26 @@ document.getElementById('add-btn').addEventListener('click', () => {
 
 	const index = todoList.length - 1;
 
-	for (let i = 0; i < 4; i++){
-		const td = document.createElement('td');
+	const td1 = document.createElement('td');
+	const td2 = document.createElement('td');
+	const td3 = document.createElement('td');
+	const td4 = document.createElement('td');
 
-		switch( i ) {
-			case 0:
-				td.textContent = todoList[index].id;
-				break;
+	td1.textContent = todoList[index].id;
 
-			case 1:
-				td.textContent = todoList[index].comment;
-				break;
+	td2.textContent = todoList[index].comment;
 
-			case 2:
-				statusButton.textContent = todoList[index].status;
-				td.appendChild(statusButton);
-				break;
+	statusButton.textContent = todoList[index].status;
+	td3.appendChild(statusButton);
 
-			case 3:
-				deleteButton.textContent = todoList[index].btn;
-				td.appendChild(deleteButton);
-				break;
-			}
+	deleteButton.textContent = todoList[index].btn;
+	td4.appendChild(deleteButton);
 
-		addtr.appendChild(td);
-	}
+	addTr.appendChild(td1);
+	addTr.appendChild(td2);
+	addTr.appendChild(td3);
+	addTr.appendChild(td4);
+
+	document.getElementById('input-task').value = "";
 
 });
