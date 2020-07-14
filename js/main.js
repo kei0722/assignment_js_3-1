@@ -14,30 +14,30 @@ document.getElementById('add-btn').addEventListener('click', () => {
 		id: todoList.length,
 		comment: document.getElementById('input-task').value,
 		status: '作業中',
-		btn: '削除',
+		deleteBtn: '削除',
 	});
 
 	const index = todoList.length - 1;
 
-	const td1 = document.createElement('td');
-	const td2 = document.createElement('td');
-	const td3 = document.createElement('td');
-	const td4 = document.createElement('td');
+	const tdId = document.createElement('td');
+	const tdComment = document.createElement('td');
+	const tdStatus = document.createElement('td');
+	const tdDeletebtn = document.createElement('td');
 
-	td1.textContent = todoList[index].id;
+	tdId.textContent = todoList[index].id;
 
-	td2.textContent = todoList[index].comment;
+	tdComment.textContent = todoList[index].comment;
 
 	statusButton.textContent = todoList[index].status;
-	td3.appendChild(statusButton);
+	tdStatus.appendChild(statusButton);
 
-	deleteButton.textContent = todoList[index].btn;
-	td4.appendChild(deleteButton);
+	deleteButton.textContent = todoList[index].deleteBtn;
+	tdDeletebtn.appendChild(deleteButton);
 
-	addTr.appendChild(td1);
-	addTr.appendChild(td2);
-	addTr.appendChild(td3);
-	addTr.appendChild(td4);
+	addTr.appendChild(tdId);
+	addTr.appendChild(tdComment);
+	addTr.appendChild(tdStatus);
+	addTr.appendChild(tdDeletebtn);
 
 	document.getElementById('input-task').value = "";
 
